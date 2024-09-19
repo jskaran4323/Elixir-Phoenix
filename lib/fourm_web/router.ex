@@ -21,6 +21,18 @@ defmodule FourmWeb.Router do
     get("/users", PageController, :users)
   end
 
+  scope "/api", FourmWeb do
+    pipe_through(:api)
+    resources("/users", UserController, except: [:new, :edit])
+
+    resources("/posts", PostController,
+      except: [
+        :new,
+        :edit
+      ]
+    )
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", FourmWeb do
   #   pipe_through :api
