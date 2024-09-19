@@ -10,9 +10,9 @@ defmodule FourmWeb.PageController do
   def users(conn, _params) do
     users = [
       %{id: 1, name: "alice", email: "Alice@email.com"},
-      %{id: 2, name: "BOB", email: "bob@eail.com"}
+      %{id: 2, name: "BOB", email: "bob@email.com"}
     ]
 
-    render(conn, :users, users: users, layout: false)
+    json(conn, %{users: users})
   end
 end
