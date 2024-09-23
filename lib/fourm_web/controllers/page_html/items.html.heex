@@ -1,0 +1,13 @@
+<h1>items page i made for practice</h1>
+ 
+<ul>
+<%= for item<- @items do%>
+<li><%= item.id%></li>
+<li>
+  <%= item.name%>
+</li>
+<li>
+  <%= item.desc%>
+</li>
+<%end%>
+</ul>
